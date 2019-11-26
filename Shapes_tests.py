@@ -12,8 +12,8 @@
 import sys
 import inspect
 
-import Shapes
-reload(Shapes)
+import Shapes as sha
+reload(sha)
 # Add import statement for the module under test as follows:
 # import module_under_test as alias
 
@@ -28,20 +28,30 @@ def main():
         test_func()
 
 def test_find_circle_area():
-    desc = "find the area of a circle"
-    expected = 19.6349540849
-    radius = 2.5
-    actual = Shapes.find_circle_area(radius)
-    func = Shapes.find_circle_area
-    print_test_results(func, desc, expected, actual)
+    '''Test radius 2.5'''
+    expected = round(19.6349540849, 5)
+    circle = sha.Circle()
+    circle.radius = 2.5
+    actual = round(circle.area, 5)
+    print_test_results(test_find_circle_area, expected, actual)
 
-def test_find_Square_area():
-    desc = "find the area of a Square"
-    expected = 100
-    length = 10
-    actual = Shapes.find_square_area(length)
-    func = Shapes.find_square_area
-    print_test_results(func, desc, expected, actual)
+def test_find_square_area():
+    '''Test length 10'''
+    expected = 9
+    square = sha.Square()
+    square.length = 3
+    actual = square.area
+    print_test_results(test_find_square_area, expected, actual)
+
+
+def test_find_rectangle_area():
+    '''Test length 2, width 4'''
+    expected = 8
+    rectangle = sha.Rectangle()
+    rectangle.length = 2
+    rectangle.width = 4
+    actual = rectangle.area
+    print_test_results(test_find_rectangle_area, expected, actual)
 
 
 
@@ -94,7 +104,7 @@ def get_test_functions():
         ordered_funcs[index] = test_func
     return ordered_funcs
 
-def print_test_results(func_tested, desc, expected, actual):
+def print_test_results(func_tested, expected, actual):
     """func_tested is the function being tested
        desc = Test description
        expected = Expected result of test
@@ -104,6 +114,7 @@ def print_test_results(func_tested, desc, expected, actual):
         raise Exception("{} is not a function".format(func_tested))
 
     func_name = func_tested.__name__
+    desc = func_tested.__doc__
     if expected == actual:
         print "PASSED: {}".format(func_name)
         print "Detail: {}".format(desc)

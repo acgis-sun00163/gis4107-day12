@@ -10,36 +10,70 @@
 #
 # Created:     dd/mm/yyyy
 # ------------------------------------------------------------------------------
-
 def main():
     pass
 
 import math
 
 class Circle (object):
-    pass
     @property
-    def circle_area(object):
-        return math.pi*object**2
+    def area(self):
+        return self.__radius**2*math.pi
 
-class Square:
-    def find_square_area (object):
-        return object**2
-class Rectangle:
-    pass
+    @property
+    def radius(self):
+        ''''''
 
-circle_a = Circle()
-
-
-##def find_circle_area (radius):
-##    circle_area = math.pi*radius**2
-##    return circle_area
+    @radius.setter
+    def radius(self,radius):
+        self.__radius= radius
 
 
-##def find_circle_area (radius):
-##    '''this finds the area of a circle'''
-##    circle_area = math.pi*radius**2
-##    return circle_area
+class Square (object):
+
+    @property
+    def length(self):
+        ''''''
+
+    @length.setter
+    def length(self,length):
+        self.__length= length
+
+    @property
+    def area(self):
+        return self.__length**2
+
+
+class Rectangle(object):
+
+    @property
+    def length(self):
+        ''''''
+
+    @length.setter
+    def length(self,length):
+        self.__length= length
+
+    @property
+    def width(self):
+        ''''''
+
+    @width.setter
+    def width(self,width):
+        self.__width= width
+
+    @property
+    def area(self):
+        return self.__length*self.__width
+
+
+
+
+
+
+
+
+
 
 
 def func(params):
