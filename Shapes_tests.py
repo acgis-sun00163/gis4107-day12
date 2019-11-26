@@ -12,6 +12,8 @@
 import sys
 import inspect
 
+import Shapes
+reload(Shapes)
 # Add import statement for the module under test as follows:
 # import module_under_test as alias
 
@@ -24,6 +26,24 @@ def main():
     test_funcs = get_test_functions()
     for test_func in test_funcs:
         test_func()
+
+def test_find_circle_area():
+    desc = "find the area of a circle"
+    expected = 19.6349540849
+    radius = 2.5
+    actual = Shapes.find_circle_area(radius)
+    func = Shapes.find_circle_area
+    print_test_results(func, desc, expected, actual)
+
+def test_find_Square_area():
+    desc = "find the area of a Square"
+    expected = 100
+    length = 10
+    actual = Shapes.find_square_area(length)
+    func = Shapes.find_square_area
+    print_test_results(func, desc, expected, actual)
+
+
 
 # Copy/paste/change the test template below to create new test functions, where:
 #    - the test function name must begin with the word "test"
