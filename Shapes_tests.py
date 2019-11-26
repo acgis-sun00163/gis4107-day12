@@ -34,6 +34,7 @@ def test_find_circle_area():
     circle.radius = 2.5
     actual = round(circle.area, 5)
     print_test_results(test_find_circle_area, expected, actual)
+    print str(circle)
 
 def test_find_square_area():
     '''Test length 10'''
@@ -42,7 +43,7 @@ def test_find_square_area():
     square.length = 3
     actual = square.area
     print_test_results(test_find_square_area, expected, actual)
-
+    print str(square)
 
 def test_find_rectangle_area():
     '''Test length 2, width 4'''
@@ -52,7 +53,7 @@ def test_find_rectangle_area():
     rectangle.width = 4
     actual = rectangle.area
     print_test_results(test_find_rectangle_area, expected, actual)
-
+    print str(rectangle)
 
 
 # Copy/paste/change the test template below to create new test functions, where:

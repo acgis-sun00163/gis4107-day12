@@ -16,6 +16,8 @@ def main():
 import math
 
 class Circle (object):
+    def __str__ (self):
+        return "Circle area with a radius of {} is {}".format(self.__radius,self.area)
     @property
     def area(self):
         return self.__radius**2*math.pi
@@ -30,7 +32,8 @@ class Circle (object):
 
 
 class Square (object):
-
+    def __str__ (self):
+        return "Square area with a side of {} is {}".format(self.__length,self.area)
     @property
     def length(self):
         ''''''
@@ -45,7 +48,8 @@ class Square (object):
 
 
 class Rectangle(object):
-
+    def __str__ (self):
+        return "Rectangle area with a width of {} and height of {} is {}".format(self.__width, self.__length,self.area)
     @property
     def length(self):
         ''''''
