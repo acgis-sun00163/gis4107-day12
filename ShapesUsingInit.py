@@ -17,7 +17,7 @@ import math
 
 class Circle (object):
     def __init__ (self, radius):
-        self.radius = radius
+        self.__radius = radius
 
     def __str__ (self):
         return "Circle area with a radius of {} is {}".format(self.__radius,self.area)
@@ -35,15 +35,17 @@ class Circle (object):
 
 
 class Square (object):
+    def __init__ (self, length):
+        self.__length = length
     def __str__ (self):
         return "Square area with a side of {} is {}".format(self.__length,self.area)
-    @property
-    def length(self):
-        ''''''
+##    @property
+##    def length(self):
+##        ''''''
 
-    @length.setter
-    def length(self,length):
-        self.__length= length
+##    @length.setter
+##    def length(self,length):
+##        self.__length= length
 
     @property
     def area(self):
@@ -51,23 +53,26 @@ class Square (object):
 
 
 class Rectangle(object):
+    def __init__ (self, length, width):
+        self.__length = length
+        self.__width = width
     def __str__ (self):
         return "Rectangle area with a width of {} and height of {} is {}".format(self.__width, self.__length,self.area)
-    @property
-    def length(self):
-        ''''''
-
-    @length.setter
-    def length(self,length):
-        self.__length= length
-
-    @property
-    def width(self):
-        ''''''
-
-    @width.setter
-    def width(self,width):
-        self.__width= width
+##    @property
+##    def length(self):
+##        ''''''
+##
+##    @length.setter
+##    def length(self,length):
+##        self.__length= length
+##
+##    @property
+##    def width(self):
+##        ''''''
+##
+##    @width.setter
+##    def width(self,width):
+##        self.__width= width
 
     @property
     def area(self):

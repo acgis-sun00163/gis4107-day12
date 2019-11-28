@@ -30,8 +30,7 @@ def main():
 def test_find_circle_area():
     '''Test radius 2.5'''
     expected = round(19.6349540849, 5)
-    circle = sha.Circle()
-    circle.radius = 2.5
+    circle = sha.Circle(2.5)
     actual = round(circle.area, 5)
     print_test_results(test_find_circle_area, expected, actual)
     print str(circle)
@@ -39,8 +38,7 @@ def test_find_circle_area():
 def test_find_square_area():
     '''Test length 10'''
     expected = 9
-    square = sha.Square()
-    square.length = 3
+    square = sha.Square(3)
     actual = square.area
     print_test_results(test_find_square_area, expected, actual)
     print str(square)
@@ -48,9 +46,9 @@ def test_find_square_area():
 def test_find_rectangle_area():
     '''Test length 2, width 4'''
     expected = 8
-    rectangle = sha.Rectangle()
-    rectangle.length = 2
-    rectangle.width = 4
+    rectangle = sha.Rectangle(2,4)
+##    rectangle.length = 2
+##    rectangle.width = 4
     actual = rectangle.area
     print_test_results(test_find_rectangle_area, expected, actual)
     print str(rectangle)
