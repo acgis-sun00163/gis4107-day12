@@ -28,20 +28,11 @@ class point(object):
 
 class Line(object):
     def __init__(self,from_point, to_point):
-        self.__from_point = from_point
-        self.__to_point = to_point
-    def tpfp (self):
-        return self.__from_point - self.__to_point
+        self.__from_point = point(x1,y1)
+        self.__to_point = point(x2,y2)
+    def xy_to_self (self):
+        return self.__from_point.getx
 
-
-def func(params):
-    """Function documentation:
-       - What does function do?
-       - What is/are expected parameter value(s)?
-       - What does function return, if anything
-       - Example usage"""
-
-    pass
 
 if __name__ == '__main__':
     main()
